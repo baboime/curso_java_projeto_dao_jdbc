@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Departamento implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+	
 	private Integer id;
 	private String nome;
 	
@@ -59,6 +60,6 @@ public class Departamento implements Serializable{
 
 	@Override
 	public String toString() {
-		return "[Departamento --> Identificação: " + id + ", Nome: " + nome + "]";
+		return "Departamento [id=" + id + ", nome=" + nome + "]";
 	}
 }
