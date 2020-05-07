@@ -1,6 +1,7 @@
 package aplicacao;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -26,6 +27,11 @@ public class Programa {
 		System.out.println("\n=== Teste 3: vendedor buscarTudo ===");
 		listaVendedor = vendedorDao.buscarTudo();
 		listaVendedor.forEach(System.out::println);
+		
+		System.out.println("\n=== Teste 4: vendedor inserir ===");
+		Vendedor novoVendedor = new Vendedor(null, "Greg", "greg@gmail.com", new Date(), 4000.0, departamento);
+		vendedorDao.inserir(novoVendedor);
+		System.out.println("Vendedor inserido! Novo id = " + novoVendedor.getId());
 
 	}
 
