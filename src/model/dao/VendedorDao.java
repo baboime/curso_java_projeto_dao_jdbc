@@ -2,6 +2,7 @@ package model.dao;
 
 import java.util.List;
 
+import model.entidades.Departamento;
 import model.entidades.Vendedor;
 
 public interface VendedorDao {
@@ -11,5 +12,5 @@ public interface VendedorDao {
 	void excluirPeloId(Integer id);
 	Vendedor buscarPeloId(Integer id);
 	List<Vendedor> buscarTudo();
-
+	List<Vendedor> buscarPeloDepartamento(Departamento departamento);
 }
