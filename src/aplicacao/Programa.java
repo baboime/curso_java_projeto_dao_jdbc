@@ -3,6 +3,7 @@ package aplicacao;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.VendedorDao;
@@ -10,8 +11,10 @@ import model.entidades.Departamento;
 import model.entidades.Vendedor;
 
 public class Programa {
-
+	
 	public static void main(String[] args) throws ParseException {
+	
+		Scanner sc = new Scanner(System.in);
 		
 		VendedorDao vendedorDao = DaoFactory.criarVendedorDao();
 		
@@ -33,12 +36,19 @@ public class Programa {
 		vendedorDao.inserir(novoVendedor);
 		System.out.println("Vendedor inserido! Novo id = " + novoVendedor.getId());
 		
-		System.out.println("\n=== Teste 5: vendedor update ===");
+		System.out.println("\n=== Teste 5: vendedor atualizar ===");
 		vendedor = vendedorDao.buscarPeloId(1);
 		vendedor.setNome("Martha Waine");
 		vendedorDao.atualizar(vendedor);
 		System.out.println("Atualização executada com sucesso!");
+		
+		System.out.println("\n=== Teste 6: vendedor excluir ===");
+		System.out.print("Informe um ID para excusão: ");
+		int id = sc.nextInt();
+		vendedorDao.excluirPeloId(id);
+		System.out.println("Exclusão realizada com sucesso!");
+		
+		sc.close();
 
 	}
-
 }
