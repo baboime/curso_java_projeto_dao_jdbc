@@ -8,7 +8,7 @@ public interface DepartamentoDao {
 	
 	void inserir(Departamento obj);
 	void atualizar(Departamento obj);
-	void excluirPeloId(Departamento obj);
+	void excluirPeloId(Integer id);
 	Departamento buscarPeloId(Integer id);
 	List<Departamento> buscarTudo();
 
